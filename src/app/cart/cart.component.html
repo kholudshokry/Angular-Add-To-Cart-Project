@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 
 <br><br><br><br><br><br><br>
 
@@ -22,7 +22,7 @@
                       <tr *ngFor="let i of proarr">
                           <td > <img  src="{{i.image}}"
                             role="img"  class="rounded-circle text-center ml-5" style="width:70px;height:70px;"/></td>
-                          <td class="text-center">{{i.price | currency:'$'}}</td>
+                          <td class="text-center">{{i.price}}$</td>
                           <td><input class="form-control" [value]="" type="number" min=0 max="1000" /></td>
                    
                           <td class="text-center">Sub-Total</td>
@@ -53,4 +53,3 @@
       </div>
   </div>
 </div><br><br><br><br><br><br><br><br><br>
-<app-footer></app-footer>

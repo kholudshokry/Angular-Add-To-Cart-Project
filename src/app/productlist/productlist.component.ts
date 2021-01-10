@@ -1,13 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../service/data.service';
+
+
 @Component({
   selector: 'app-productlist',
   templateUrl: './productlist.component.html',
   styleUrls: ['./productlist.component.css']
 })
+
+
+
 export class ProductlistComponent implements OnInit {
   data: any; 
   productsArr: any;
+  term: string;
 
   constructor( private dataservice : DataService) { }
 
