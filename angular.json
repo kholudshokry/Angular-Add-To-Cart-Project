@@ -24,6 +24,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -120,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "ShoppingCart"
+  "defaultProject": "ShoppingCart",
+  "cli": {
+    "analytics": "84d008d9-61de-40ca-bdb5-66fb07d79018"
+  }
 }

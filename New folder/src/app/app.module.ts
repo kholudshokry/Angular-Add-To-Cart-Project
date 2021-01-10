@@ -13,6 +13,8 @@ import { CartdropdownComponent } from './cartdropdown/cartdropdown.component';
 import { CartdetailsComponent } from './cartdetails/cartdetails.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { CartComponent } from './cart/cart.component';
     CartdropdownComponent,
     CartdetailsComponent,
     CartComponent,
+    CheckoutComponent,
+    SearchPipe,
     
    
   ],
@@ -36,6 +40,7 @@ import { CartComponent } from './cart/cart.component';
     NgbAlertModule, 
     NgbModule,
     HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
