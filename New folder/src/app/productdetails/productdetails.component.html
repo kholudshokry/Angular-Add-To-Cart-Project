@@ -9,7 +9,7 @@
          <b>{{SelectedProduct.title}}</b>
         </h3>
         <p class="lead text-danger" style=" font-family: 'Anton', sans-serif; font-size: 20px;">
-          {{SelectedProduct.price | currency:'$'}}
+          {{SelectedProduct.price}}$
         </p>
         <p class="lead" style=" font-family: 'Anton', sans-serif; font-size: 18px;"><span>Category:</span><br>
           {{SelectedProduct.category}}
@@ -18,10 +18,7 @@
           {{SelectedProduct.description}}
         </p>
      
-        <!-- <p class="lead text-warning" >
-          You already added this product into your cart
-         
-        </p> -->
+       
         <div class="row">
       
         <p class="lead">

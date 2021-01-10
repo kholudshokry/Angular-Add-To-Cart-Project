@@ -8,6 +8,7 @@ import {DataService} from '../service/data.service';
 export class ProductlistComponent implements OnInit {
   data: any; 
   productsArr: any;
+  term: string;
 
   constructor( private dataservice : DataService) { }
 

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -40,6 +41,8 @@ import { SearchPipe } from './search.pipe';
     NgbAlertModule, 
     NgbModule,
     HttpClientModule,
+    FormsModule ,
+    ReactiveFormsModule,
     
   ],
   providers: [],
