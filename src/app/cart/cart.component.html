@@ -26,7 +26,7 @@
                           <td><input class="form-control" [value]="" type="number" min=0 max="1000" /></td>
                    
                           <td class="text-center">Sub-Total</td>
-                          <td class="text-center font-white"><button (click)="cart.remove(item._id, true)" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                          <td class="text-center font-white"><button  class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                       </tr>
             
                       <tr>
@@ -41,13 +41,12 @@
       <div class="col mb-2">
           <div class="row">
               <div class="col-sm-12  col-md-6">
-                  <button class="btn btn-block  btn-dark" >Continue Shopping</button>
+                  <button class="btn btn-block  btn-dark" routerLink="/home">Continue Shopping</button>
               </div>
               <div class="col-sm-12 col-md-6 text-right">
-                  <ng-container >
-                    <button class="btn btn-block btn-dark" >Check Out</button>
-                  </ng-container>
-              
+                 
+                    <button class="btn btn-block btn-dark" routerLink="/checkout">Check Out</button>
+                
               </div>
           </div>
       </div>
