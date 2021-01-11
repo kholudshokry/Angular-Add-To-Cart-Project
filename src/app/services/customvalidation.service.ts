@@ -12,7 +12,7 @@ export class CustomvalidationService {
       if (!control.value) {
         return null;
       }
-      const regex = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$');
+      const regex = new RegExp('(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))\s*[)]?[-\s\.]?[(]?[0-9]{1,3}[)]?([-\s\.]?[0-9]{3})([-\s\.]?[0-9]{3,4})');
       const valid = regex.test(control.value);
       return valid ? null : { invalidPassword: true };
     };

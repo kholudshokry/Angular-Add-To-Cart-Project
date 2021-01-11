@@ -1,61 +1,32 @@
 
-
- <br> <br> <br> <br> 
-
-
-<!-- <div class="row"> -->
-    <!-- <div class="col-md-4 offset-md-4"> -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="text-center">CheckOut Form</h3>
-                        </div>
-                        <div class="card-body">
-                            <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                                <div class="form-group">
-                                    <label>Phone</label>
-                                    <input type="text" class="form-control" formControlName="name">
-                                    <span class="text-danger"
-                                        *ngIf="(registerFormControl.name.touched || submitted) ">
-                                        Phone is required
-                                    </span>
-                      
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="text" class="form-control" formControlName="email" placeholder="xxxxxxx@xxxx.xxx">
-                                    <span class="text-danger"
-                                        *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
-                                        Email is required
-                                    </span>
-                                    <span class="text-danger"
-                                        *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
-                                        Enter a valid email address it must have this pattern "xxxxxxx@xxxx.xxx"
-                                    </span>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label>Address</label>
-                                    <textarea type="password" class="form-control" formControlName="password"></textarea>
-                                    <span class="text-danger"
-                                        *ngIf="(registerFormControl.password.touched || submitted) ">
-                                        Address is required
-                                    </span>
-                                </div>
-                         
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-dark col-md-4 " (click)="delete()">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+  <br> <br> <br> <br>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">CheckOut Form</h3>
                 </div>
-            </div>
-        </div>
+<div class="card-body">
+    <form [formGroup]='reactiveForm' (ngSubmit)="handleReactiveFormSubmit()" class="w-50 m-auto mt-5">
+      <div class="form-group">
+        <label for="email">Email </label>
+        <input [class.is-invalid]="reactiveForm.get('email').invalid==true && reactiveForm.get('email').touched==true" formControlName="email" type="email" class="form-control " aria-describedby="emailHelp">
+        <small *ngIf="reactiveForm.get('email').invalid==true && reactiveForm.get('email').touched==true" id="emailHelp" class="form-text  text-muted mt-2 alert alert-danger">email is not valid</small>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input [class.is-invalid]="reactiveForm.get('password').invalid==true && reactiveForm.get('password').touched==true" formControlName="password" type="password" class="form-control" >
+        <small *ngIf="reactiveForm.get('password').invalid==true && reactiveForm.get('password').touched==true"  id="emailHelp" class="form-text text-muted mt-2 alert alert-danger">password is not valid</small>
+      </div>
    
-<br> <br> <br> <br> <br> 
-
-
-
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input [class.is-invalid]="reactiveForm.get('adress').invalid==true && reactiveForm.get('adress').touched==true"  formControlName="adress" type="text" class="form-control">
+        <small *ngIf="reactiveForm.get('adress').invalid==true && reactiveForm.get('adress').touched==true" id="emailHelp" class="form-text text-muted mt-2 alert alert-danger"> adress is not valid.</small>
+      </div>
+      <button [disabled]="reactiveForm.invalid == true"  type="submit" class="btn btn-dark col-md-11 ml-3"  (click)="delete()">Submit</button>
+    </form>
+  </div>
+</div></div></div></div>
+<br> <br> <br> <br>

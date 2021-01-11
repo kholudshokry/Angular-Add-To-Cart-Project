@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { CustomvalidationService } from '../services/customvalidation.service';
+import{FormControl , FormGroup , Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-checkout',
@@ -9,35 +9,20 @@ import { CustomvalidationService } from '../services/customvalidation.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-    
-  registerForm: FormGroup;
-  submitted = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private customValidator: CustomvalidationService
-  ) { }
+  reactiveForm:FormGroup = new FormGroup({
+    email: new FormControl('' ,[ Validators.required , Validators.email]),
+    password: new FormControl('' , [Validators.required , Validators.minLength(5) , Validators.maxLength(9)]),
+    adress: new FormControl('' , Validators.required)
+ });
+  constructor() { }
 
-  ngOnInit() {
-    this.registerForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.compose([Validators.required, this.customValidator.patternValidator()])],
-      
-    }
-    );
+  ngOnInit(): void{
+
   }
 
-  get registerFormControl() {
-    return this.registerForm.controls;
-  }
-
-  onSubmit() {
-    this.submitted = true;
-    if (this.registerForm.valid) {
-      
-      console.table(this.registerForm.value);
-    }
+  handleReactiveFormSubmit(){
+    console.log(this.reactiveForm.value);
   }
   delete(){
     localStorage.clear();
