@@ -11,12 +11,12 @@
         <p class="lead text-danger" style=" font-family: 'Anton', sans-serif; font-size: 20px;">
           {{SelectedProduct.price}}$
         </p>
-        <p class="lead" style=" font-family: 'Anton', sans-serif; font-size: 18px;"><span>Category:</span><br>
+        <p class="lead" style=" font-family: 'Anton', sans-serif; font-size: 18px;"><span class="lead text-danger">Category:</span>
           {{SelectedProduct.category}}
         </p>
         <p class="lead" style=" font-family: 'Anton', sans-serif; font-size: 18px;">
           {{SelectedProduct.description}}
-        </p>
+        </p><br><br>
      
        
         <div class="row">
@@ -25,7 +25,7 @@
           <button class="btn btn-outline-primary mr-4" routerLink="/home">Continue Shopping</button>
           <button class="btn btn-outline-primary" (click)="addCard(SelectedProduct)">Add to cart</button>
         </p>
-    </div>
+    </div><br><br><br>
       </div>
     </div>
   </div>
