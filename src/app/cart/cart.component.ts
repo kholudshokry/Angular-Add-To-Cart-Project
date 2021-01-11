@@ -16,4 +16,18 @@ export class CartComponent implements OnInit {
   }
 
 }
-}
+ deleteItem(i)
+  {
+    //  let indexDeleted = proInfo.id;
+     this.proarr =JSON.parse(localStorage.getItem("productsData"));
+     for(let item = 0; item < this.proarr.length; item++)
+     {
+         if (this.proarr[item]['id'] == i.id) {
+          this.proarr.splice(item, 1);
+          localStorage.setItem('productsData', JSON.stringify(this.proarr));
+        return true;
+        }
+
+     }
+    }
+  }

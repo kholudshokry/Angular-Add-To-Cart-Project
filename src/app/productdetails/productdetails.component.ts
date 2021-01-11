@@ -10,7 +10,7 @@ import { DataService } from '../service/data.service';
 export class ProductdetailsComponent implements OnInit {
   index;
   SelectedProduct:any ={};
-
+  productsArr: any;
   constructor( Active : ActivatedRoute , Data:  DataService ) {
     this.index = Active.snapshot.paramMap.get("id");
     Data.getProductslist().subscribe((data)=>{
@@ -22,5 +22,23 @@ export class ProductdetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   
+  addCard(proData)
+ {
+     if(localStorage.getItem("productsData") == null)
+      {
+        this.productsArr = [];
+        this.productsArr.push(proData);
+        localStorage.setItem("productsData" , JSON.stringify(this.productsArr));
 
-}
+      }
+      else
+      {
+        this.productsArr.push(proData)
+        localStorage.setItem("productsData" , JSON.stringify(this.productsArr));
+      }
+
+
+    }
+
+  }
+
